@@ -1,33 +1,175 @@
-.App {
+.Swarmhole{
+  position: relative;
+  padding-top: 25vh;
+}
+
+.Swarmhole-logo {
+  text-align: center;    
+  z-index: 101;
+  position: absolute;
+  top: 18vh;
+  pointer-events: none;
+  width: 100%
+}
+
+.Swarmhole-logo img{
+  width: 50vh;
+}
+
+
+.Swarmhole-widget-wrapper{
+  margin: auto;
+  padding: 20px;
+  border-radius: 1000px;
+  border: 5px solid black;
+  background: black;
+  width: 35vh;
+  color: white;
+  display: table;
+  height: 35vh;
+}
+
+.Swarmhole-widget-inner{
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.Swarmhole-logo-datafund {
+  height:30px;
+  margin-bottom:20px;
+  margin-right:20px;
+}
+
+.Swarmhole-logo-swarm {
+  height:70px;
+}
+
+.App-Wrapper{
+  position: relative;
+  /*display:table;*/
+}
+
+.Swarmhole-widget-wrapper{
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+
+
+.Swarmhole-ui-inner {
+  z-index: 102;
+  position: relative;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.Swarmhole-spinner{
+   width: 100%;
+   height: 103vh;
+   position: absolute;
+   overflow: hidden;
+   top: -3vh;
 }
 
-.App-link {
-  color: #61dafb;
+.Swarmhole-spinner::after {
+  background: url(/spiral.svg) no-repeat center center;
+  background-size: cover;
+  content: "";
+  width: 200%;
+  height: 400vh;
+  position: absolute;
+  margin-top: -150vh;
+  margin-left: -50%;
+  display: table-cell;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.Swarmhole-in::after {
+  -webkit-animation: spinX 8s linear infinite;
+  animation: spinX 8s linear infinite;
+}
+.Swarmhole-out::after {
+  -webkit-animation: spinC 8s linear infinite;
+  animation: spinC 8s linear infinite;
+}
+
+.Swarmhole-spinning-star {
+  animation: spinC 2s linear infinite;
+  width: 30px;
+  top: 16px;
+  position: relative;
+}
+
+#file-input{
+  display: inline;
+}
+
+@-webkit-keyframes spinC
+{  
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+@keyframes spinC
+{  
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+@-webkit-keyframes spinX
+{  
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes spinX
+{  
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.Powered-by{
+  position: absolute;
+  bottom: 5vh;
+  width: 100%;
+  margin: auto;
+  z-index: 102;
+  text-align: center;
+  color: grey;
+  line-height: 1.3em;
+  font-size:12px;
+}
+
+.Powered-by a{
+  color: lightgrey;
+  line-height: 1.9em;
+  font-size:19px;
+}
+
+@media (max-width: 600px){
+  
+  .Swarmhole-logo{
+    top: 19vh;
   }
-  to {
-    transform: rotate(360deg);
+
+  .Swarmhole-logo img{
+    width:90vw;
+  }
+
+  .Swarmhole-spinner{
+    /*display: none;*/
+    width: 100%;
+    height: 103vh;
+    position: absolute;
+    overflow: hidden;
+  }
+
+  .Swarmhole-spinner::after {
+    width: 400%;
+    height: 400vh;
+    position: absolute;
+    margin-top: -150vh;
+    margin-left: -150%;
+  }
+
+  .feedback {
+    width: 75%;
+    margin: auto;
   }
 }
