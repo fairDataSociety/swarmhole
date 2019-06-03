@@ -142,6 +142,15 @@
   font-size:19px;
 }
 
+.feedback {
+  width: 69%;
+  margin: auto;
+}
+
+a {
+  color: orange;
+}
+
 @media (max-width: 600px){
   
   .Swarmhole-logo{

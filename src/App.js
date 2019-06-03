@@ -50,7 +50,7 @@ class App extends Component {
       this.setState({
         found: true,
         finding: false,
-        feedback: 'found! your Swarmhole is at...',
+        feedback: 'account found! your Swarmhole is at...',
         swarmholeAddress: "https://swarmhole.com/?recipient="+account
       })      
     }else{
@@ -141,11 +141,12 @@ class App extends Component {
                           <p>Sent!</p>
                         </div>
                       }
+                    <p><a className="orange" target="_blank" href="https://swarmhole.com">get yours...</a></p>
                   </div>
                 }
                 { this.state.recipient === null && 
                   <div>
-                    <div>
+                    <div class="feedback">
                       <p>Enter your <a target="_blank" href="https://fairdrop.xyz">fairdrop.xyz</a><br/>account name...</p> 
                       <input type="text" onChange={this.setAccount.bind(this)}></input>
                         <p>
